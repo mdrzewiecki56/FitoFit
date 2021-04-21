@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: maciek
+  password: test
+
+
+development:
+  <<: *default
+  database: fitofit_development
+
+test:
+  <<: *default
+  database: fitofit_test
+
+production:
+  <<: *default
+  database: fitofit_production
+  username: admin
+  password: <%= ENV['FITOFIT_DATABASE_PASSWORD'] %>
