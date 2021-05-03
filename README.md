@@ -1,24 +1,28 @@
-# README
+# FitoFit API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+Ruby 3.0.0
 
-Things you may want to cover:
+## Configuration
+- Api uses postgresql database, so you need one to proceed
+- Edit <code>database.yml</code> with config that suits your needs.
+- <code>bundle install</code>
+- <code>rails s</code>
 
-* Ruby version
+### Comments
+There's only one model - Walk, used to store walks' data,
+there are also two services:
+- GeocodingService which stores methods which are useful in terms of geocoding locations
+- StatisticsServices::WalkSummary - service for generating walk statistics
 
-* System dependencies
+CORS accepts all origins. 
 
-* Configuration
+I hope that this architecture meets your requirements I was wondering 
+if I shouldn't split walks into more models (like additonal model, 
+only for locations, to collect additional data about places. 
+Then I could use <code>geocoded_by:</code> and other Geocoder's tricks). 
+I've decided to implement only the basic functionalities that were specified by you.
 
-* Database creation
+I've written some tests, not 100% coverage, but wanted to show my testing skills. (looking forward on feedback on it)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I set up some really basic seeds, not much but they allow to look into statistics (April, May)

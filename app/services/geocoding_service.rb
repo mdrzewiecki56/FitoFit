@@ -10,6 +10,7 @@ class GeocodingService
 
   def self.format_address(geolocation)
     "#{geolocation.street} #{geolocation.house_number}, #{geolocation.city}, #{geolocation.country}"
+      .strip.reverse.chomp(",").reverse
   end
 
   private
